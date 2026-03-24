@@ -4,11 +4,11 @@ Decode Google Calendar eventedit URL segment (or full URL) into:
   - Calendar ID (often an email)
 
 Usage:
-  python decode_gcal_event_link.py
+  python 01-gcal-event-link-decoder.py
       → prompts you to paste the URL or encoded segment, then Enter.
 
-  python decode_gcal_event_link.py "https://...eventedit/..."
-  echo URL | python decode_gcal_event_link.py
+  python 01-gcal-event-link-decoder.py "https://...eventedit/..."
+  echo URL | python 01-gcal-event-link-decoder.py
 """
 
 from __future__ import annotations
