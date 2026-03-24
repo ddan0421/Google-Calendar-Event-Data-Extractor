@@ -47,13 +47,12 @@ function extractSingleEventGuests() {
     'RSVP',
     'Display name',
     'Organizer',
-    'Optional guest',
-    'Room / resource'
+    'Optional guest'
   ];
 
   const rows = [headers];
   attendees.forEach(function (att) {
-    if (!att.email) return;
+    if (!att.email || att.resource) return;
     const email = att.email.toLowerCase().trim();
     const domain = email.split('@')[1] || '';
     const nameParts = guestNameParts_(att, email);
@@ -65,8 +64,7 @@ function extractSingleEventGuests() {
       rsvpLabel_(att.responseStatus),
       att.displayName || '',
       att.organizer ? 'Yes' : '',
-      att.optional === true ? 'Yes' : att.optional === false ? 'No' : '',
-      att.resource ? 'Yes' : ''
+      att.optional === true ? 'Yes' : att.optional === false ? 'No' : ''
     ]);
   });
 
