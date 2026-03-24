@@ -45,7 +45,6 @@ function extractSingleEventGuests() {
     'Email',
     'Company (from domain)',
     'RSVP',
-    'Display name',
     'Organizer',
     'Optional guest'
   ];
@@ -62,7 +61,6 @@ function extractSingleEventGuests() {
       email,
       guessCompanyName(domain),
       rsvpLabel_(att.responseStatus),
-      att.displayName || '',
       att.organizer ? 'Yes' : '',
       att.optional === true ? 'Yes' : att.optional === false ? 'No' : ''
     ]);
